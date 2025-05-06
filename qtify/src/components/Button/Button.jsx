@@ -1,17 +1,13 @@
-import navbarStyles from "../Navbar/navbar.module.css";
+import styles from "./button.module.css";
 
 const Button = ({ text, eventHandler }) => {
   return (
-    <div>
-      <button
-        className={navbarStyles.feedback}
-        onClick={(e) =>
-          eventHandler.event === "onClick" && eventHandler.handler(e)
-        }
-      >
-        {text}
-      </button>
-    </div>
+    <button
+      className={styles.button}
+      onClick={eventHandler?.event === "onClick" ? eventHandler.handler : null}
+    >
+      {text}
+    </button>
   );
 };
 
