@@ -13,8 +13,8 @@ const Navbar = ({ data, page, songsData }) => {
   };
 
   useEffect(() => {
-    const feedback = document.getElementById("feedback");
-    const body = document.body;
+    let feedback = document.getElementById("feedback");
+    let body = document.body;
     if (isFeedbackClicked) {
       body.style.overflowY = "hidden";
       feedback?.classList.add("feedbackClicked");
@@ -30,13 +30,14 @@ const Navbar = ({ data, page, songsData }) => {
         <Feedback onClose={() => setIsFeedbackClicked(false)} />
       )}
       <nav className={styles.nav}>
-        <div className={styles.navItem}>
+        {/* Wrapping the components in divs with aria-labels */}
+        <div className={styles.logoContainer} aria-label="navbar-logo">
           <Logo />
         </div>
-        <div className={styles.navItem}>
+        <div className={styles.searchContainer} aria-label="navbar-search">
           <Search data={page === "home" ? data : songsData} page={page} />
         </div>
-        <div className={styles.navItem}>
+        <div className={styles.buttonContainer} aria-label="navbar-button">
           <Button
             text="GIVE FEEDBACK"
             eventHandler={{ event: "onClick", handler: handleClick }}

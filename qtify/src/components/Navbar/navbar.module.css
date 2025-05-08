@@ -97,4 +97,21 @@
     display: flex;
     align-items: center;
   }
+  .logoContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .searchContainer {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .buttonContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
 }
