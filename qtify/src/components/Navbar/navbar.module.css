@@ -93,4 +93,8 @@
     padding: 5px;
     font-size: 10px;
   }
+  .navItem {
+    display: flex;
+    align-items: center;
+  }
 }
